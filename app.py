@@ -9,11 +9,10 @@ redis = Redis(host='redis', port=6379)
 def GetContainerName():
     try:
         for line in open("/proc/self/cgroup"):
+            if 'docker' in line:
+                return line
     except:
         return "error"
-    else:
-        if 'docker' in line:
-    return line
 
 def hello():
     redis.incr('hits')
