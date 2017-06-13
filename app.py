@@ -11,7 +11,7 @@ def hello():
     redis.incr('hits')
     return 'Hello World! I have been seen %s times. I am %s' % (redis.get('hits'), container_name)
 
-@app.route('/')
+@app.route('/gatetes')
 def gatetes():
     return '<CENTER>GATETES!<BR><img src="http://thecatapi.com/api/images/get?format=src&type=gif"><BR>Server Id: ' + container_name
 
